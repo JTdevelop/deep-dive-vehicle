@@ -7,19 +7,31 @@ public class Vehicle {
 }
 
 // This class declares and object of type Vehicle.
-class VehicleDemo {
+class TwoVehicles {
   public static void main(String args[]) {
     Vehicle minivan = new Vehicle();
-    int range;
+    Vehicle sportscar = new Vehicle();
 
-    //assign values to fields in minivan
+    int range1, range2;
+
+    // assign values to fields in minivan
     minivan.passengers = 7;
     minivan.fuelcap = 16;
     minivan.mpg = 21;
 
-    // comput the range assuming a full tank of gas
-    range = minivan.fuelcap * minivan.mpg;
+    // assign values to fields in sportscar
+    sportscar.passengers = 2;
+    sportscar.fuelcap = 14;
+    sportscar.mpg = 12;
+
+    // compute the ranges assuming a full tank of gas
+    range1 = minivan.fuelcap * minivan.mpg;
+    range2 = sportscar.fuelcap * sportscar.mpg;
+
     System.out.println("Minivan can carry " + minivan.passengers +
-        " with a range of " + range);
+        " with a range of " + range1);
+
+    System.out.println("Sportscar can carry " + sportscar.passengers +
+    " with a range of " + range2);
   }
 }
