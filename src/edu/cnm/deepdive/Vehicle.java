@@ -1,6 +1,9 @@
 package edu.cnm.deepdive;
 
-// Use a return value
+/*
+  Add a parameterized method that computes the
+  fuel required for a given distance.
+ */
 public class Vehicle {
   int passengers; // number of passengers
   int fuelcap; // fuel capacity in gallons
@@ -10,15 +13,20 @@ public class Vehicle {
   int range() {
     return mpg * fuelcap;
   }
+
+  // Compute fuel needed for a given distance.
+  double fuelneeded(int miles) {
+    return (double) miles / mpg;
+  }
 }
 
 // This class declares an object of type Vehicle.
-class RetMeth{
+class CompFuel{
   public static void main(String args[]) {
     Vehicle minivan = new Vehicle();
     Vehicle sportscar = new Vehicle();
-
-    int range1, range2;
+    double gallons;
+    int dist = 252;
 
     // assign values to fields in minivan
     minivan.passengers = 7;
@@ -30,15 +38,15 @@ class RetMeth{
     sportscar.fuelcap = 14;
     sportscar.mpg = 12;
 
-    // get the ranges
-    range1 = minivan.range();
-    range2 = sportscar.range();
+    gallons = minivan.fuelneeded(dist);
 
-    System.out.println("Minivan can carry " + minivan.passengers +
-        " with range of " + range1 + " Miles");
+    System.out.println("To go " + dist +
+        " miles minivan needs " + gallons + " gallons of fuel.");
 
 
-    System.out.println("Sportscar can carry " + sportscar.passengers +
-    " with range of " + range2 + " Miles");
+    gallons = sportscar.fuelneeded(dist);
+
+    System.out.println("To go " + dist +
+        " miles sportscar needs " + gallons + " gallons of fuel.");
   }
 }
