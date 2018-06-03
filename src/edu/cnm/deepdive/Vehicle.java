@@ -1,13 +1,19 @@
 package edu.cnm.deepdive;
 
+// Use a return value
 public class Vehicle {
   int passengers; // number of passengers
   int fuelcap; // fuel capacity in gallons
   int mpg; // fuel consumption in miles per gallon
+
+  // Display the range.
+  int range() {
+    return mpg * fuelcap;
+  }
 }
 
-// This class declares and object of type Vehicle.
-class TwoVehicles {
+// This class declares an object of type Vehicle.
+class RetMeth{
   public static void main(String args[]) {
     Vehicle minivan = new Vehicle();
     Vehicle sportscar = new Vehicle();
@@ -24,14 +30,15 @@ class TwoVehicles {
     sportscar.fuelcap = 14;
     sportscar.mpg = 12;
 
-    // compute the ranges assuming a full tank of gas
-    range1 = minivan.fuelcap * minivan.mpg;
-    range2 = sportscar.fuelcap * sportscar.mpg;
+    // get the ranges
+    range1 = minivan.range();
+    range2 = sportscar.range();
 
     System.out.println("Minivan can carry " + minivan.passengers +
-        " with a range of " + range1);
+        " with range of " + range1 + " Miles");
+
 
     System.out.println("Sportscar can carry " + sportscar.passengers +
-    " with a range of " + range2);
+    " with range of " + range2 + " Miles");
   }
 }
